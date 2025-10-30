@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Gaming Scoreboard Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="header-icon">🏆</div>
+                <div>
+                    <h1>Real-Time Gaming Scoreboard</h1>
+                    <p>Multi-threaded Score Simulation with Concurrent Updates</p>
+                </div>
+            </div>
+            <div class="header-info">
+                <div>Players: <strong>4</strong></div>
+                <div>Updates: <strong>10</strong> each</div>
+            </div>
+        </div>
+        <div class="control-panel">
+            <div class="controls">
+                <div class="button-group">
+                    <button class="btn-start" id="startBtn" onclick="startGame()">
+                        <span>▶️</span>
+                        <span id="startBtnText">Start Simulation</span>
+                    </button>
+                    <button class="btn-reset" onclick="resetGame()">
+                        🔄 Reset Game
+                    </button>
+                </div>
+                <div class="stats-display">
+                    <div class="stat-item">
+                        <span>🎯</span>
+                        <span>Progress: <strong id="progressPercent">0.0%</strong></span>
+                    </div>
+                    <div class="stat-item">
+                        <span>🕐</span>
+                        <span>Updates: <strong id="updateCount">0/40</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="scoreboard">
+                <h2>👥 Live Scoreboard</h2>
+                <div id="playersContainer"></div>
+                <div id="winnerBanner" style="display: none;" class="winner-banner">
+                    <div class="trophy">🏆</div>
+                    <h3>WINNER</h3>
+                    <div class="winner-name" id="winnerName"></div>
+                    <div id="winnerScore"></div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="stats-box">
+                    <h3>📊 Game Statistics</h3>
+                    <div class="stat-row">
+                        <span class="label">Total Points</span>
+                        <span class="value" id="totalPoints">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Average Score</span>
+                        <span class="value" id="avgScore">0.00</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Highest Score</span>
+                        <span class="value" id="highScore">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Lowest Score</span>
+                        <span class="value" id="lowScore">0</span>
+                    </div>
+                    <div class="stat-row" id="durationRow" style="display: none;">
+                        <span class="label">Duration</span>
+                        <span class="value" id="duration">0s</span>
+                    </div>
+                </div>
+                <div class="logs-box">
+                    <h3>📝 Activity Log</h3>
+                    <div class="logs-container" id="logsContainer">
+                        <div class="empty-logs">
+                            No activity yet. Start the simulation!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
